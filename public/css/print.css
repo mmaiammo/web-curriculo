@@ -1,0 +1,27 @@
+.menu-lateral {
+  display: none !important;
+}
+
+.a4 {
+  width: 100% !important;
+  height: 100% !important;
+  border: 1px solid #e5e5e5 !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@page {
+  margin: 1rem;
+}
+/* margin on left page */
+@page :left {
+  margin: 1rem;
+}
+/* margin on right page */
+@page :right {
+  margin: 1rem;
+}
+/* top margin on first page */
+@page :first {
+  margin-top: 1rem;
+}
