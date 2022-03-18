@@ -13,7 +13,7 @@
         <div class="col-4 pessoal p-0">
 
             <div class="image">
-                <img src="{{ asset('storage/image/foto-1.jpg') }}" class="img-fluid" alt="...">
+                <img src="{{ asset('storage/image/foto-1.jpg') }}" class="img-fluid" alt="..">
             </div>
 
             <div class="nome">
