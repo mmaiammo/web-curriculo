@@ -27,4 +27,4 @@ Homestead.json
 docker-compose.override.yml
 /.idea
 /.vscode
-node_modules
+# node_modules
