@@ -2,16 +2,17 @@
 
 @section('title', 'Marcelo Maia')
 
-
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/print.css') }}" type="text/css" media="print" />
+    <link rel="stylesheet" id="cssid" href="{{ asset('css/design.min.css') }}">
 @endsection
 
 @section('content')
     <div class="row a4">
+
+        {{-- Info: Pessoal --}}
         <div class="col-4 pessoal p-0">
 
+            {{-- Info: Imagem --}}
             <div class="image">
                 <img src="{{ asset('storage/image/foto-1.jpg') }}" class="img-fluid" alt="..">
             </div>
@@ -22,6 +23,7 @@
                 <p class="cargo">- Analista de Sistemas -</p>
             </div>
 
+            {{-- Info: Características --}}
             <div class="caracteristicas">
                 <p class="header">
                     <i class="far fa-user-circle"></i><span>características</span>
@@ -36,6 +38,7 @@
                 </ul>
             </div>
 
+            {{-- Info: Sobre --}}
             <div class="sobre">
                 <p class="header">
                     <i class="fa-solid fa-circle-info"></i><span>sobre mim</span>
@@ -51,6 +54,7 @@
                 </div>
             </div>
 
+            {{-- Info: Contato --}}
             <div class="contato">
 
                 <p class="header">
@@ -68,6 +72,7 @@
 
             </div>
 
+            {{-- Info: Hobbies --}}
             <div class="hobbies">
                 <p class="header">
                     <i class="fa-solid fa-splotch"></i><span>hobbies</span>
@@ -77,24 +82,24 @@
 
                     <div class="row">
                         <div class="col-4">
-                            <i class="fa-solid fa-film fa-2xl"></i>
+                            <i class="fa-solid fa-film fa-2"></i>
                         </div>
                         <div class="col-4">
-                            <i class="fa-solid fa-plane-departure fa-2xl"></i>
+                            <i class="fa-solid fa-plane-departure fa-2"></i>
                         </div>
                         <div class="col-4">
-                            <i class="fa-solid fa-graduation-cap fa-2xl"></i>
+                            <i class="fa-solid fa-graduation-cap fa-2"></i>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <i class="fa-solid fa-music fa-2xl"></i>
+                            <i class="fa-solid fa-music fa-2"></i>
                         </div>
                         <div class="col-4">
-                            <i class="fa-solid fa-umbrella-beach fa-2xl"></i>
+                            <i class="fa-solid fa-umbrella-beach fa-2"></i>
                         </div>
                         <div class="col-4">
-                            <i class="fa-solid fa-utensils fa-2xl"></i>
+                            <i class="fa-solid fa-utensils fa-2"></i>
                         </div>
                     </div>
 
@@ -102,8 +107,11 @@
             </div>
 
         </div>
-        <div class="col-8 diversos">
 
+        {{-- Info: Profissional --}}
+        <div class="col-8 profissional">
+
+            {{-- Info: Objetivo --}}
             <div class="objetivo">
                 <p class="header">
                     <i class="fa-solid fa-bullseye"></i><span>objetivo</span>
@@ -116,6 +124,7 @@
                 </div>
             </div>
 
+            {{-- Info: Competências --}}
             <div class="competencias">
                 <p class="header">
                     <i class="fa-solid fa-laptop-code"></i><span>competências</span>
@@ -139,6 +148,7 @@
                 </div>
             </div>
 
+            {{-- Info: Experiência --}}
             <div class="experencias">
                 <p class="header">
                     <i class="fa-solid fa-briefcase"></i><span>experiências</span>
@@ -224,6 +234,7 @@
                 </div>
             </div>
 
+            {{-- Info: Formação / Idioma --}}
             <div class="varios row">
 
                 <div class="col-6 formacao">
@@ -261,6 +272,7 @@
 
             </div>
 
+            {{-- Info: Assinatura --}}
             <div class="assinatura">
                 <div class="row">
                     <div class="col-3"></div>
@@ -278,8 +290,34 @@
             </div>
 
         </div>
+
     </div>
 @endsection
 
 @section('js')
+    <script>
+        function troca_css(cssFile) {
+            
+            document.getElementById('cssid').setAttribute('href', cssFile);
+        }
+
+        function print() {
+            //document.getElementById('cssid').setAttribute('href', 'css/print.min.css');
+            console.log('print: ');
+            $("#a4").print({
+                globalStyles: true,
+                mediaPrint: false,
+                stylesheet: 'css/print.min.css',
+                noPrintSelector: ".no-print",
+                iframe: true,
+                append: null,
+                prepend: null,
+                manuallyCopyFormValues: true,
+                deferred: $.Deferred(),
+                timeout: 750,
+                title: null,
+                doctype: '<!doctype html>'
+            });
+        }
+    </script>
 @endsection

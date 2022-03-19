@@ -4,6 +4,8 @@ COPY . /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
+COPY ./db/ /docker-entrypoint-initdb.d/
+
 WORKDIR /usr/share/nginx/html
 
 RUN ln -s public html
